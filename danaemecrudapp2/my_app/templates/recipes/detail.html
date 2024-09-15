@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1>{{ recipe.title }}</h1>
+  <p>Ingredients: {{ recipe.ingredients }}</p>
+  <p>Instructions: {{ recipe.instructions }}</p>
+  <p>Prep Time: {{ recipe.prep_time }} minutes</p>
+  <p>Cook Time: {{ recipe.cook_time }} minutes</p>
+
+  <a href="{% url 'recipe-update' recipe.id %}" class="btn btn-warning">Edit</a>
+  <a href="{% url 'recipe-delete' recipe.id %}" class="btn btn-danger">Delete</a>
+{% endblock %}
