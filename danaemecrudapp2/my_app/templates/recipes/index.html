@@ -19,6 +19,13 @@
             <p>Preparation Time: {{ recipe.prep_time }} minutes</p>
           </div>
         </a>
+        <div class="card-actions">
+          <a href="{% url 'recipe-update' recipe.id %}">Edit</a> |
+          <a href="{% url 'recipe-delete' recipe.id %}" 
+             onclick="return confirm('Are you sure you want to delete the recipe?');">
+             Delete
+          </a>
+        </div>
       </div>
     {% endfor %}
   </section>

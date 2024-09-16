@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ category.name }} Recipes</h1>
+
+  {% if recipes %}
+    <ul>
+      {% for recipe in recipes %}
+        <li><a href="{% url 'recipe-detail' recipe.id %}">{{ recipe.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No recipes in this category yet.</p>
+  {% endif %}
+  
+  <a href="{% url 'categories-index' %}">Back to Categories</a>
+{% endblock %}
