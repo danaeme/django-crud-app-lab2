@@ -11,8 +11,20 @@
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'recipe-index' %}">All Recipes</a></li>
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'recipe-create' %}">Add a Recipe</a></li>
+                <li><a href="{% url 'categories-index' %}">All Categories</a></li>
+                <li>
+                    <form id="logout-form" method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+                {% else %}
                 <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
