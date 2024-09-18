@@ -46,7 +46,7 @@ def add_recipe_to_category(request, category_id, recipe_id):
 
 class RecipeCreate(LoginRequiredMixin, CreateView):
     model = Recipe
-    fields = ['title', 'ingredients', 'instructions', 'prep_time', 'cook_time']
+    fields = ['title', 'ingredients', 'instructions', 'prep_time', 'cook_time', 'category']
     success_url = '/recipes/'  
     template_name = 'recipes/recipe_form.html'
     
