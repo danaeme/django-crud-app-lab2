@@ -18,4 +18,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', views.signup, name='signup'),
     path('accounts/login/', CustomLoginView.as_view(), name='login'),
+    path('categories/<int:category_id>/add-recipe/<int:recipe_id>/', views.add_recipe_to_category, name='add-recipe-to-category'),
+    path('categories/add/', views.CategoryCreate.as_view(), name='category-create'),
 ]

@@ -12,6 +12,7 @@
   {% else %}
     <p>No recipes in this category yet.</p>
   {% endif %}
-  
+  <a href="{% url 'recipe-create' %}">Add Recipe</a>
+  <a href="{% url 'category-create' %}">Add Category</a>
   <a href="{% url 'categories-index' %}">Back to Categories</a>
 {% endblock %}
